@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/*MAIN*/
+main {
+  background-color: #333333;
+  width: 100vw;
+  height: 100vh;
+}
+
+main .main-cover {
+
+  /*width: 1440px;*/
+  /*margin: 0 auto;*/
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background.png");
+  background-repeat: repeat;
+
+}
+
+main .main-cover .inner {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+main .main-cover .inner p {
+  padding: 150px 0;
+  font-size: 60px;
+  color: #F8F8F8;
+  font-weight: 1000;
+  z-index: 1;
+}
+main .main-cover .inner p:hover {
+  /*color: #333333;*/
+  -webkit-text-stroke: 3px #333333;
+  transition: .3s;
+}
+
+main .main-cover .inner .btn-cover {
+  padding: 50px 0;
+
+}
+
+main .main-cover .inner .btn-cover input {
+  width: 225px;
+  height: 90px;
+  margin: 0 20px;
+  border-radius: 15px;
+  border: 2px solid #333333;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
+
+main .main-cover .inner .search-cover {
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+main .main-cover .inner .search-cover .background {
+  width: 955.50px;
+  height: 92px;
+  margin: 0 auto;
+  background: #F6BD66;
+  border-radius: 34px;
+  border: 3px #0D1776 solid;
+
+
+}
+
+main .main-cover .inner .search-cover .background .in-cover {
+  margin-top: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main .main-cover .inner .search-cover .background .in-cover div,
+main .main-cover .inner .search-cover .background .in-cover input,
+main .main-cover .inner .search-cover .background .in-cover i {
+  margin: auto 10px;
+}
+
+main .main-cover .inner .search-cover .background .in-cover i.fa-solid.fa-magnifying-glass{
+  font-size: 55px;
+}
+main .main-cover .inner .search-cover .background .in-cover i {
+  font-size: 25px;
+}
+main .main-cover .inner .search-cover .background .in-cover .category {
+  font-size: 35px;
+  font-weight: bolder;
+  width: 60px;
+
+}
+
+.search-text {
+  width: 596px;
+  height: 69px;
+  border-radius: 34px;
+  /*color: black;*/
+  font-size: 28px;
+  /*font-family: Inter;*/
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.line {
+  width: 4px;
+  height: 50px;
+  background: #333333;
+}

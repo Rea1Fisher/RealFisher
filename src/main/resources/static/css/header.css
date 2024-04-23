@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*HEADER*/
+header {
+  border-bottom: 1px solid #DBBB69;
+}
+header .header-cover{
+  width: 1440px;
+  height: 80px;
+  margin: 0 auto;
+  position: relative;
+
+
+}
+header .header-cover .inner {
+  width: 1440px;
+  height: 80px;
+  border-bottom: 1px solid #DBBB69;
+  display: inline-flex;
+  align-items: center;
+}
+header .header-cover .inner .logo {
+  padding-left: 50px;
+  padding-right: 10px;
+}
+header .header-cover .inner .logo img {
+
+}
+header .header-cover .inner p {
+  font-size: 25px;
+  font-weight: 600;
+}
+header .header-cover .inner ul {
+  display: flex;
+  margin-left: 930px;
+}
+header .header-cover .inner ul li {
+  padding: 0 10px;
+}
+header .header-cover .inner ul li input {
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  height: 35px;
+
+  border-radius: 5px;
+}
