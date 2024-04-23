@@ -1,4 +1,4 @@
-package com.example.realfish;
+package com.example.realfisher;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-    return application.sources(RealFishApplication.class);
+    return application.sources(RealFisherApplication.class);
   }
 
 }

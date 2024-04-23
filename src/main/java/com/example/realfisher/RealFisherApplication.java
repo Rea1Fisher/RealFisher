@@ -1,13 +1,13 @@
-package com.example.realfish;
+package com.example.realfisher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RealFishApplication {
+public class RealFisherApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(RealFishApplication.class, args);
+    SpringApplication.run(RealFisherApplication.class, args);
   }
 
 }
