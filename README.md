@@ -1,5 +1,5 @@
 <h1 style="color: #69ABDB;align-items: center;justify-content: center">
-<img style="width: 15px; height: 15px" src="src/main/resources/static/images/logo.png">&nbsp;RealFisher
+<img style="width: 25px; height: 25px" src="src/main/resources/static/images/logo.png">&nbsp;RealFisher
 </h1>
 
 ### 내부 결제 시스템을 구현한 부동산 거래 플랫폼
