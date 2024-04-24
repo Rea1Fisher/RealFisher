@@ -1,11 +1,13 @@
-<h1 style="color: #69ABDB">RealFisher</h1>
+<h1 style="color: #69ABDB;align-items: center;justify-content: center">
+<img src="src/main/resources/static/images/logo.png">&nbsp;RealFisher
+</h1>
 
 # 내부 결제 시스템을 구현한 부동산 거래 플랫폼
 
-<div style="align-items: center"><h1>📚 STACKS</h1></div>
+<div style="align-items: center;justify-content: center"><h1>📚 STACKS</h1></div>
 
-<div style="align-items: center">
-<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+<div style="align-items: center; justify-content: center">
+<img src="https://img.shields.io/badge/java-F80000?style=for-the-badge&logo=java&logoColor=white"> 
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=yellow">
 <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 <br>
