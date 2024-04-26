@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+  <typeAliases>
+    <!--user-->
+    <typeAlias type="com.example.realfisher.domain.user.dto.AgentDTO" alias="agentdto"/>
+    <typeAlias type="com.example.realfisher.domain.user.dto.LesseeDTO" alias="lesseedto"/>
+    <typeAlias type="com.example.realfisher.domain.user.dto.LessorDTO" alias="lessordto"/>
+    <typeAlias type="com.example.realfisher.domain.user.dto.UserDTO" alias="userdto"/>
+
+    <!--transaction-->
+    <typeAlias type="com.example.realfisher.domain.transaction.dto.TotalTransactionDTO" alias="totaltransactiondto"/>
+    <typeAlias type="com.example.realfisher.domain.transaction.dto.UserAccountDTO" alias="useraccountdto"/>
+
+    <!--serach-->
+    <typeAlias type="com.example.realfisher.domain.search.dto.RealEstateOfficeDTO" alias="realestateofficedto"/>
+    <typeAlias type="com.example.realfisher.domain.search.dto.ReviewDTO" alias="reviewdto"/>
+
+    <!--contract-->
+    <typeAlias type="com.example.realfisher.domain.contract.dto.BuildingDTO" alias="buildingdto"/>
+    <typeAlias type="com.example.realfisher.domain.contract.dto.ContractDTO" alias="contractdto"/>
+  </typeAliases>
+
+</configuration>

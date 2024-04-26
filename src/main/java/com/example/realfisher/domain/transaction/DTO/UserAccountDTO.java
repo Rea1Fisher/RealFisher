@@ -1,5 +1,7 @@
 package com.example.realfisher.domain.transaction.DTO;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Component;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserAccount {
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+public class UserAccountDTO {
   private long userAccount;
   private long balance;
   private boolean isCredit;

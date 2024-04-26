@@ -7,7 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%--<%@ page session="false" %>--%>
+<c:set var="loginInOutLink" value="${sessionScope.id==null ? '/user/login' : '/user/logout'}" />
+<c:set var="loginInOut" value="${sessionScope.id==null ? 'LogIn' : 'LogOut'}" />
+<c:set var="mySignOutLink" value="${sessionScope.id==null ? '/user/signup' : '/user/mypage'}" />
+<c:set var="mySign" value="${sessionScope.id==null ? 'SignUp' : 'MyPage'}" />
 <div class="header-cover">
   <div class="inner">
     <%--로고--%>
@@ -18,10 +22,10 @@
     <%--상단 버튼--%>
     <ul>
       <li>
-        <input class="button" type="button" value="SignUp">
+        <a class="button" href="<c:url value='${mySignOutLink}'/>">${mySign}</a>
       </li>
       <li>
-        <input class="rev-button" type="button" value="Login">
+        <a class="button" href="<c:url value='${loginInOutLink}'/>">${loginInOut}</a>
       </li>
     </ul>
   </div>

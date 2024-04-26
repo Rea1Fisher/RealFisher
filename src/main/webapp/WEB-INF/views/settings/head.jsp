@@ -13,7 +13,7 @@
 <title>RealFisher</title>
 
 <%--icon--%>
-<link rel="icon" href="/images/fish-fins-solid.svg" />
+<link rel="icon" href="/images/logo.png" />
 
 <!-- 브라우저의 초기설정을 reset -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />

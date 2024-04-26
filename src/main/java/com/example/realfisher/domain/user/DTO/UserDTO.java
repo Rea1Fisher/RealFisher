@@ -6,8 +6,6 @@ import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-
 @Component
 @Setter
 @Getter
@@ -16,21 +14,23 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class LessorDTO {
-
-  private long lessorKey;
-  private String lessorId;
-  private String lessorPw;
-  private String lessorName;
-  private String lessorEmail;
-  private String lessorPhone;
-  private boolean lessorIsDeleted;
-  private Timestamp lessorRegDate;
-  private Timestamp lessorBirth;
-  private String lessorAddress;
-  private long lessorAccount; //계좌번호
+public class UserDTO {
+  private long userKey;
+  private String Id;
+  private String Pw;
+  private String Name;
+  private String Email;
+  private String Phone;
+  private boolean isDeleted;
+  private Timestamp regDate;
+  private Timestamp birth;
+  private String userAddress;
+  private Long borkerNumber;
+  private long userAccount; //계좌번호
   private long registrationNum; // 건물 등본
-  private long lessorCoin;
-
+  private long fishCoin;
+  private boolean isAgent;
+  private boolean isLessee;
+  private boolean isLessor;
 
 }

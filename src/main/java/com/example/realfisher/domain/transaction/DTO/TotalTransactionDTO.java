@@ -1,5 +1,7 @@
 package com.example.realfisher.domain.transaction.DTO;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 import org.springframework.stereotype.Component;
 import java.sql.Timestamp;
@@ -10,6 +12,7 @@ import java.sql.Timestamp;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class TotalTransactionDTO {
 
   private long userAccount;
