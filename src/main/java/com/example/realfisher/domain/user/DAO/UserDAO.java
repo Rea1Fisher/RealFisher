@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface UserDAO {
 
   UserDTO selectOneUser(String id);
+
+  int registerMember(UserDTO userDTO);
 }

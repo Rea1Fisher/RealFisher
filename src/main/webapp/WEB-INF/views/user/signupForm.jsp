@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" type="text/css" href="/css/common.css">
   <link rel="stylesheet" type="text/css" href="/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/css/signupForm.css">
 
   <script defer src="/js/signup.js"></script>
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -34,14 +35,14 @@
     <div class="in-cover">
       <div>
         아이디<br/>
-        <input class="signup-input" type="text" name="id" id="signup-userid">
+        <input class="signup-input" type="text" name="userId" id="signup-userid">
         &nbsp;<input class="signup-button" id="id-check-button" type="button" value="아이디 중복 체크" style="margin-right: 20px"><br/><br/>
       </div>
 
       이름<br/>
-      <input class="signup-input" type="text" name="name" id="signup-username"><br/>
+      <input class="signup-input" type="text" name="userName" id="signup-username"><br/>
       비밀번호 (8자리 이상, 문자 숫자 특수기호 포함)<br/>
-      <input class="signup-input" id="signup-userpw" type="password" name="pw"><br/>
+      <input class="signup-input" id="signup-userpw" type="password" name="userPw"><br/>
       비밀번호 재확인<br/>
       <input class="signup-input" id="signup-userpw-re" type="password"><br/>
       핸드폰 번호 (01X-XXXX-XXXX 형식)<br/>
@@ -52,12 +53,16 @@
         <input class="signup-input" type="email" name="email" id="email">
         &nbsp;<input class="signup-input" type="button" id="email-check-button" value="인증번호 요청"><br/>
       </div>
-      <br/>
 
       <div>
         인증번호<br/>
-        <input class="signup-input" type="text" name="email-auth-check" id="email-check-num"><br/>
-        &nbsp;<input class="signup-input" type="button" id="email-auth-check-button" value="인증번호 요청"><br/>
+        <input class="signup-input" type="text" name="userKey" id="email-check-num">
+        &nbsp;<input class="signup-input" type="button" id="email-auth-check-button" value="인증번호 확인"><br/>
+      </div>
+
+      <div>
+        계좌번호<br/>
+        <input class="signup-input" type="text" name="userAccount" id="user-account">
       </div>
 
       <div>
@@ -72,6 +77,20 @@
       </select>
       <br/>
 
+      거래 참여 방식<br/>
+      <input id="agent" type="radio" value="agent" name="whichParticipant"><label for="agent">중개인</label>
+      <input id="lessee" type="radio" value="lessee" name="whichParticipant" checked><label for="lessee">임차인</label>
+      <input id="lessor" type="radio" value="lessor" name="whichParticipant"><label for="lessor">임대인</label>
+      <br/>
+
+      <div id="agent-toggle" style="display: none">
+        중개사 자격번호 <input type="number" id="agent_number" name="brokerNumber" min="0">
+      </div>
+
+      <div id="lessor-toggle" style="display: none">
+        건물 등록번호 <input type="number" id="lessor_number" name="registrationNum" min="0">
+      </div>
+
       <div style="margin:2px 0;">
         주소<br/>
         <input class="signup-input" type="text" name="addressNumber" id="address-number" placeholder="우편번호">
@@ -80,6 +99,8 @@
       <input class="signup-input" type="text" name="addressStreet" id="address-street" placeholder="도로명주소"><br>
       <input class="signup-input" type="text" name="addressSpecific" id="address-specific" placeholder="상세주소"><br>
     </div>
+
+    <br/>
 
     <div class="submit-cover">
       <input type="submit" value="회 원 가 입"  id="submit">

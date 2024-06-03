@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.realfisher.domain.search.DAO.SearchDAO">
+  <!--insert-->
+  <insert id="insertDatas" parameterType="java.util.List">
+    insert into real_estate_office (registration_num, office_name, representative, office_address, reg_date)
+    values
+    <foreach collection="list" item="reo" separator=",">
+      (#{reo.registrationNum}, #{reo.officeName}, #{reo.representative}, #{reo.officeAddress},#{reo.regDate})
+    </foreach>
+  </insert>
+
+  <!--select-->
+  <select id="searchOffice" resultType="realestateofficedto">
+    select *
+    from real_estate_office
+    where office_name like concat('%',#{keyword},'%')
+  </select>
+</mapper>

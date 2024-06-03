@@ -2,10 +2,6 @@ package com.example.realfisher.domain.user.DTO;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -32,9 +28,8 @@ public class AgentDTO {
   private Timestamp agentRegDate;
   private Timestamp agentBirth;
   private String agentAddress;
-  private long borkerNumber;
+  private long brokerNumber; // 중개사 번호
   private long agentAccount; //계좌번호
-  private long agentCoin;
 
 
 

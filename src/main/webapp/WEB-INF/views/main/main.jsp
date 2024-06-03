@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script defer src="/js/search.js"></script>
 
 <div class="main-cover">
 
@@ -21,21 +22,21 @@
       <input id="t-button" class="t-button" type="button" value="for tenant">
     </div>
 
-
+    <form id="search-form" name="searchForm" action="/search" autocomplete="off">
     <div class="search-cover">
       <div class="background">
         <div class="in-cover">
           <div class="category">All</div>
           <i class="fa-solid fa-play fa-rotate-90" style="color: #333333;"></i>
           <div class="line" style="margin-left: 20px"></div>
-          <input class="search-text" type="text" placeholder="search here..."/>
+          <input class="search-text" id="keyword" name="keyword" type="text" placeholder="search here..." required maxlength='25'/>
 
-          <i class="fa-solid fa-magnifying-glass" style="color: #333333;"></i>
+          <i id="search-icon" class="fa-solid fa-magnifying-glass" style="color: #333333;"></i>
         </div>
       </div>
 
-
     </div>
+    </form>
 
   </div>
 

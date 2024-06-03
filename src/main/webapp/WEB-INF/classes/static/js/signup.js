@@ -10,7 +10,7 @@ $('#id-check-button').on('click', function () {
   $.ajax({
     type: 'post',
     url: '/user/id_check',
-    data: {'userId': $('#signup-userid').val()},
+    data: {'id': $('#signup-userid').val()},
     dataType: 'json',
     success: function (response) {
       // 아이디 중복
@@ -22,7 +22,7 @@ $('#id-check-button').on('click', function () {
         $('#signup-userid').focus();
       } else {
         alert("사용 가능한 아이디입니다.");
-        $('#signup-username').focus();
+        $('signup-username').focus();
       }
     }
   })
@@ -30,9 +30,9 @@ $('#id-check-button').on('click', function () {
 
 /*인증메일 전송*/
 $('#email-check-button').on('click', function () {
-
   if ($('#email').val().length === 0) alert("이메일 주소를 입력해주세요.");
   else {
+
     $.ajax({
       type: 'post',
       url: '/user/email_check',
@@ -68,10 +68,7 @@ $('#address-search-button').on('click', function () {
 submit_btn.addEventListener('click', function (ev) {
 
   let phoneRegex = new RegExp("01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}");
-  let pwRegex = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
-  let agentLessorRegex = /^[0-9]+$/;
-  let is_agent_checked = document.getElementById('agent').checked;
-  let is_lessor_checked = document.getElementById('lessor').checked;
+  var pwRegex = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
 
 
   if ($('#signup-userid').val().length === 0) {
@@ -122,49 +119,20 @@ submit_btn.addEventListener('click', function (ev) {
     alert("올바른 비밀번호 형식을 지켜주세요.");
     $('#signup-userpw').focus();
     ev.preventDefault();
-  } else if (input_pw.value !== input_pw_re.value) { // 재확인 비밀번호랑 다른 경우
+  } else if (input_pw.value != input_pw_re) { // 재확인 비밀번호랑 다른 경우
     alert("같은 비밀번호를 입력해주세요.");
-    $('#signup-userpw-re').focus();
+    $('signup-userpw-re').focus();
     ev.preventDefault();
-  } else if (!phoneRegex.test($('#phone').val())) {
+  } else if (!phoneRegex.test($('phone').val())) {
     alert("핸드폰 번호를 010-XXXX-XXXX 의 형식으로 입력해주세요.");
-    $('#phone').focus();
-    ev.preventDefault();
-  } else if (is_agent_checked && !agentLessorRegex.test($('#agent_number').val())) {
-    alert('중개사 자격번호에 번호만 입력해주세요.');
-    $('#agent_number').focus();
-    ev.preventDefault();
-  } else if (is_lessor_checked && !agentLessorRegex.test($('#lessor_number').val())) {
-    alert('건물 등록번호에 번호만 입력해주세요.');
-    $('#lessor_number').focus();
-    ev.preventDefault();
-  } else if (!agentLessorRegex.test($('#user-account').val())) {
-    alert('계좌번호에 번호만 입력해주세요');
-    $('#user-account').focus();
+    $('phone').focus();
     ev.preventDefault();
   }
 
-
 });
 
-/* 거래 참여 방식 */
-// $('#agent').on('checked', function () {
-//   $('#agent-toggle').toggle();
-// })
-// $('#lessor').on('checked', function () {
-//   $('#lessor-toggle').toggle();
-// })
-$('input[name="whichParticipant"]').on('change', function() {
-  // 모든 토글 요소를 숨김
-  $('#agent-toggle, #lessor-toggle').hide();
+var register_result = "${registerResult}";
 
-  // 선택된 라디오 버튼에 해당하는 토글 요소를 표시
-  if ($('#agent').is(':checked')) {
-    $('#agent-toggle').show();
-  } else if ($('#lessor').is(':checked')) {
-    $('#lessor-toggle').show();
-  }
-});
-
-// 페이지 로드 시 초기 상태 설정
-$('input[name="whichParticipant"]:checked').trigger('change');
+if(register_result === "정상 회원가입이 되었습니다.") {
+  alert(register_result);
+}

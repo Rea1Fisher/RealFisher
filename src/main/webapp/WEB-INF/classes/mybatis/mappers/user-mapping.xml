@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.realfisher.domain.user.DAO.UserDAO">
+  <!--select-->
+  <select id="selectOneUser" resultType="userdto" parameterType="String">
+    select * from user_info where user_id = #{id}
+  </select>
+  <!--insert-->
+  <insert id="registerMember" parameterType="userdto">
+    insert into user_info(user_key,user_id,user_pw,user_name,email,phone,birthday,address,gender)
+    values(1234566652,#{id}, #{pw}, #{name}, #{eamil}, #{phone}, #{birthday}, #{userAddress}, #{gender})
+  </insert>
+
+</mapper>

@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ page session="false" %>--%>
-<c:set var="loginInOutLink" value="${sessionScope.id==null ? '/user/login' : '/user/logout'}" />
-<c:set var="loginInOut" value="${sessionScope.id==null ? 'LogIn' : 'LogOut'}" />
-<c:set var="mySignOutLink" value="${sessionScope.id==null ? '/user/signup' : '/user/mypage'}" />
-<c:set var="mySign" value="${sessionScope.id==null ? 'SignUp' : 'MyPage'}" />
+<c:set var="loginInOutLink" value="${sessionScope.loginUser==null ? '/user/login' : '/user/logout'}" />
+<c:set var="loginInOut" value="${sessionScope.loginUser==null ? 'LogIn' : 'LogOut'}" />
+<c:set var="mySignOutLink" value="${sessionScope.loginUser==null ? '/user/signup' : '/user/mypage'}" />
+<c:set var="mySign" value="${sessionScope.loginUser==null ? 'SignUp' : 'MyPage'}" />
 <div class="header-cover">
   <div class="inner">
     <%--로고--%>

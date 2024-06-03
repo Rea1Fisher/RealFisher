@@ -3,12 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-  <settings>
-    <setting name="mapUnderscoreToCamelCase" value="true" />
-  </settings>
 
   <typeAliases>
     <!--user-->
+    <typeAlias type="com.example.realfisher.domain.user.DTO.AgentDTO" alias="agentdto"/>
+    <typeAlias type="com.example.realfisher.domain.user.DTO.LesseeDTO" alias="lesseedto"/>
+    <typeAlias type="com.example.realfisher.domain.user.DTO.LessorDTO" alias="lessordto"/>
     <typeAlias type="com.example.realfisher.domain.user.DTO.UserDTO" alias="userdto"/>
 
     <!--transaction-->
@@ -22,8 +22,6 @@
     <!--contract-->
     <typeAlias type="com.example.realfisher.domain.contract.DTO.BuildingDTO" alias="buildingdto"/>
     <typeAlias type="com.example.realfisher.domain.contract.DTO.ContractDTO" alias="contractdto"/>
-
   </typeAliases>
-
 
 </configuration>

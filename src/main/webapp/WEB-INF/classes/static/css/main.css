@@ -5,9 +5,7 @@ main {
   width: 100vw;
   height: 100vh;
 }
-i {
-  cursor: pointer;
-}
+
 main .main-cover {
 
   /*width: 1440px;*/

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*COMMON*/
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic','sans-serif';
+}
+img {
+  display: block;
+}
+input {
+  cursor: pointer;
+}
+.button {
+  color: #333333;
+  background-color: unset;
+  transition: .4s;
+}
+.button:hover {
+  color: #F8F8F8;
+  background-color: #333333;
+}
+.rev-button {
+  color: #F8F8F8;
+  background-color: #333333;
+  transition: .4s;
+}
+.rev-button:hover {
+  color: #333333;
+  background-color: unset;
+}
+ #a-button {
+  color: #F8F8F8;
+  background-color: #69ABDB;
+  transition: .4s;
+}
+ #a-button:hover {
+  color: #F8F8F8;
+  background-color: #DBBB69;
+}
+ #t-button {
+  color: #F8F8F8;
+  background-color: #DBBB69;
+  transition: .4s;
+}
+ #t-button:hover {
+  color: #F8F8F8;
+  background-color: #69ABDB;
+}

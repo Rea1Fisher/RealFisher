@@ -4,8 +4,16 @@
 
 <mapper namespace="com.example.realfisher.domain.user.DAO.UserDAO">
 
+  <!--select-->
   <select id="selectOneUser" resultType="userdto" parameterType="String">
-    select * from user_info where user_id = #{user_id}
+    select * from user_info where user_id = #{userId}
   </select>
+  <!--insert-->
+  <insert id="registerMember" parameterType="userdto">
+    insert into user_info(user_key, user_id, user_pw, user_name, email, phone, birthday, regDate, address, gender, user_account,which_participant ,registration_num, broker_number)
+    values (#{userKey}, #{userId}, #{userPw}, #{userName}, #{email}, #{phone}, #{birthday}, now() ,#{userAddress}, #{gender}, #{userAccount}, #{whichParticipant} ,#{registrationNum} ,#{brokerNumber})
+  </insert>
+
+
 
 </mapper>

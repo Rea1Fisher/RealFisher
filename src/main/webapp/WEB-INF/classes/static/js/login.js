@@ -12,8 +12,8 @@ $("#login-button").on('click', function (ev) {
       type: 'post',
       url: '/user/login',
       data: {
-        'userId': $('#login-userid').val(),
-        'userPw': $('#login-userpw').val(),
+        'id': $('#login-userid').val(),
+        'pw': $('#login-userpw').val(),
         'rememberId': $('#remember-id').prop('checked')
       },
       dataType: 'json',

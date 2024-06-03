@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" type="text/css" href="/css/common.css">
   <link rel="stylesheet" type="text/css" href="/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/css/loginForm.css">
 
   <script defer src="/js/login.js"></script>
 </head>
@@ -34,13 +35,13 @@
   <div class="login-cover">
     <div class="id">
       <div class="text"></div>
-      <input class="login-input" id="login-userid" value="${cookie.id.value}" name="id" type="text" placeholder="ID"
+      <input class="login-input" id="login-userid" value="${cookie.id.value}" name="userId" type="text" placeholder="ID"
              required maxlength="25">
     </div>
 
     <div class="pw">
       <div class="text"></div>
-      <input class="login-input" id="login-userpw" name="pw" type="password" placeholder="Password" required
+      <input class="login-input" id="login-userpw" name="userPw" type="password" placeholder="Password" required
              maxlength="25">
     </div>
   </div>
