@@ -24,14 +24,17 @@
 </header>
 
 <br>
-<c:forEach var="office" items="${officeInfo}" >
+<c:forEach var="office" items="${officeInfo}">
   <div style="border: 1px solid olivedrab; text-align: center">
-  <div>${office.officeName}</div>
-  <div>${office.registrationNum}</div>
-  <div>${office.representative}</div>
-  <div>${office.officeAddress}</div>
-  <div>${office.regDate}</div>
+    <a class="office-info" href="/">
+      <div>${office.officeName}</div>
+      <div>${office.registrationNum}</div>
+      <div>${office.representative}</div>
+      <div>${office.officeAddress}</div>
+      <div>${office.regDate}</div>
+    </a>
   </div>
+
   <br/>
 </c:forEach>
 

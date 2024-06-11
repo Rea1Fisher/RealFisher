@@ -62,7 +62,7 @@
 
       <div>
         계좌번호<br/>
-        <input class="signup-input" type="text" name="userAccount" id="user-account">
+        <input class="signup-input" type="text" name="userAccount" id="user-account" maxlength="18">
       </div>
 
       <div>
@@ -84,11 +84,12 @@
       <br/>
 
       <div id="agent-toggle" style="display: none">
-        중개사 자격번호 <input type="number" id="agent_number" name="brokerNumber" min="0">
+        중개사 자격번호 <input type="text" id="agent_number" name="brokerNumber" maxlength="18"><br>
+        소속공인중개사무소 <input type="text" id="registration_num" name="registrationNum" maxlength="99">
       </div>
 
       <div id="lessor-toggle" style="display: none">
-        건물 등록번호 <input type="number" id="lessor_number" name="registrationNum" min="0">
+        건물 등록번호 <input type="text" id="lessor_number" name="registrationNum" maxlength="18">
       </div>
 
       <div style="margin:2px 0;">
@@ -97,7 +98,7 @@
         &nbsp;<input class="signup-input" type="button" id="address-search-button" value="우편번호찾기"><br/>
       </div>
       <input class="signup-input" type="text" name="addressStreet" id="address-street" placeholder="도로명주소"><br>
-      <input class="signup-input" type="text" name="addressSpecific" id="address-specific" placeholder="상세주소"><br>
+      <input class="signup-input" type="text" name="addressSpecific" id="address-specific" placeholder="상세주소" maxlength="20"><br>
     </div>
 
     <br/>

@@ -89,13 +89,19 @@ public class UserController {
 
     ModelAndView mv = new ModelAndView();
     log.info("userDTO : {}", userDTO);
-    if (userDTO.getBrokerNumber().isEmpty()) {
-      userDTO.setBrokerNumber(null);
-    }
-    if (userDTO.getRegistrationNum().isEmpty()) {
+
+    if (userDTO.getRegistrationNum().isEmpty())
       userDTO.setRegistrationNum(null);
+
+    String result= "";
+
+    // 공인중개사인 경우
+    if (userDTO.getWhichParticipant().equals("agent")) {
+      result = service.registerAgent(userDTO);
+    } else {
+    // 일반 회원인 경우
+      result = service.registerMember(userDTO);
     }
-    String result = service.registerMember(userDTO);
 
     log.info("result : {}", result);
 

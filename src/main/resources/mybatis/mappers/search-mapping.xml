@@ -18,4 +18,18 @@
     from real_estate_office
     where office_name like concat('%',#{keyword},'%')
   </select>
+
+  <!--select-->
+  <select id="searchRN" resultType="realestateofficedto">
+    select *
+    from real_estate_office
+    where registration_num = #{registrationNum}
+  </select>
+
+  <!--select-->
+  <select id="searchReview" resultType="reviewdto">
+    select review,user_key,write_time
+    from review
+    where registration_num = #{registrationNum}
+  </select>
 </mapper>

@@ -20,5 +20,5 @@ public class RealEstateOfficeDTO {
   private String officeName;
   private String representative;
   private String officeAddress;
-  private String  regDate;
+  private String regDate;
 }

@@ -134,6 +134,10 @@ submit_btn.addEventListener('click', function (ev) {
     alert('중개사 자격번호에 번호만 입력해주세요.');
     $('#agent_number').focus();
     ev.preventDefault();
+  } else if (is_agent_checked && !$('#agent_number').val()) {
+    alert('소속공인중개사무소 \"-\"를 포함하여 번호를 입력해주세요');
+    $('#agent_number').focus();
+    ev.preventDefault();
   } else if (is_lessor_checked && !agentLessorRegex.test($('#lessor_number').val())) {
     alert('건물 등록번호에 번호만 입력해주세요.');
     $('#lessor_number').focus();

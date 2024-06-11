@@ -11,4 +11,6 @@ public interface UserDAO {
   UserDTO selectOneUser(String id);
 
   int registerMember(UserDTO userDTO);
+
+  int registerAgent(UserDTO userDTO);
 }

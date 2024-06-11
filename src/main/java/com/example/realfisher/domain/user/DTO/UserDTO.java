@@ -29,6 +29,7 @@ public class UserDTO {
   private String userAddress;
   private Long userAccount; //계좌번호
   private String brokerNumber; // 중개사 번호
-  private String registrationNum; // 건물 등본
+  private String registrationNum; // 소속공인중개사무소
+  private String BuildingRegistration; // 건물 등본
   private String whichParticipant; // 참여자 종류
 }

@@ -1,6 +1,7 @@
 package com.example.realfisher.domain.search.controller;
 
 import com.example.realfisher.domain.search.DTO.RealEstateOfficeDTO;
+import com.example.realfisher.domain.search.DTO.ReviewDTO;
 import com.example.realfisher.domain.search.service.DataService;
 import com.example.realfisher.domain.search.service.SearchService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +19,7 @@ import java.util.List;
 
 @Controller
 @Slf4j
+@RequestMapping(path = "/search")
 public class SearchController {
 
   @Autowired
@@ -24,7 +27,7 @@ public class SearchController {
   @Autowired
   SearchService searchService;
 
-  @GetMapping("/search")
+  @GetMapping
   public ModelAndView search(String keyword, HttpServletRequest request, HttpSession session) {
     ModelAndView mv = new ModelAndView();
     // keyword와 정확히 일치하는 공인중개사사무소
@@ -33,11 +36,22 @@ public class SearchController {
     } else {
       List<RealEstateOfficeDTO> list = searchService.searchOffice(keyword);
       mv.addObject("officeInfo", list);
-      for (int i = 0; i < list.size(); i++) {
-        log.info("RealEstateOfficeDTO : {}", list.get(i));
-      }
+//      for (int i = 0; i < list.size(); i++) {
+//        log.info("RealEstateOfficeDTO : {}", list.get(i));
+//      }
     }
     mv.setViewName("searchPage");
+    return mv;
+  }
+  @GetMapping("/{registrationNum}")
+  public ModelAndView showOffice(@PathVariable String registrationNum) {
+    ModelAndView mv = new ModelAndView();
+
+    RealEstateOfficeDTO realEstateOfficeDTO = searchService.searchRN(registrationNum);
+    ReviewDTO reviewDTO = searchService.searchReview(registrationNum);
+
+    mv.addObject("officeInfo",realEstateOfficeDTO);
+
     return mv;
   }
 

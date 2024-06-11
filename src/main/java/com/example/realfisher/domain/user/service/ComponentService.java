@@ -28,8 +28,10 @@ public class ComponentService {
 
 
   public String registerMember(UserDTO userDTO) {
-
-
     return userService.registerMember(userDTO);
+  }
+
+  public String registerAgent(UserDTO userDTO) {
+    return agentService.registerAgent(userDTO);
   }
 }

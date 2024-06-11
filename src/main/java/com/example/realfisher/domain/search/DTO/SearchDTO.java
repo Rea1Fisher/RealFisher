@@ -15,9 +15,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class ReviewDTO {
+public class SearchDTO {
+  private long userKey;
   private String registrationNum;
-  private String review;
-  private String userKey;
-  private Timestamp writeTime;
+  private Timestamp searchTime;
 }
