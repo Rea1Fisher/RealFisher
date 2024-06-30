@@ -8,15 +8,19 @@
   <select id="selectOneUser" resultType="userdto" parameterType="String">
     select * from user_info where user_id = #{userId}
   </select>
+  <!--select-->
+  <select id="selectOneAgent" resultType="userdto" parameterType="String">
+    select * from agent where user_id = #{userId}
+  </select>
   <!--insert-->
   <insert id="registerMember" parameterType="userdto">
     insert into user_info(user_key, user_id, user_pw, user_name, email, phone, birthday, regDate, address, gender, account_num ,building_registration)
-    values (#{userKey}, #{userId}, #{userPw}, #{userName}, #{email}, #{phone}, #{birthday}, now() ,#{userAddress}, #{gender}, #{userAccount} ,#{BuildingRegistration})
+    values (#{userKey}, #{userId}, #{userPw}, #{userName}, #{email}, #{phone}, #{birthday}, now() ,#{userAddress}, #{gender}, #{userAccount} ,#{buildingRegistration})
   </insert>
 
   <!--insert-->
   <insert id="registerAgent" parameterType="userdto">
-    insert into agent(agent_key, agent_id, agent_pw, agent_name, agent_email, agent_phone, agent_birthday, agent_regDate, agent_address, gender, account_num, registration_num, broker_number)
+    insert into agent(user_key, user_id, user_pw, user_name, email, phone, birthday, regDate, address, gender, account_num, registration_num, broker_number)
     values (#{userKey}, #{userId}, #{userPw}, #{userName}, #{email}, #{phone}, #{birthday}, now() ,#{userAddress}, #{gender}, #{userAccount} ,#{registrationNum} ,#{brokerNumber})
   </insert>
 

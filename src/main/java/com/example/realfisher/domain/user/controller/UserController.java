@@ -43,34 +43,35 @@ public class UserController {
   ) {
     log.info("id : {}", userId);
     log.info("pw : {}", userPw);
-    UserDTO dto = service.selectOneUser(userId);
-//    log.info("dto : {}", dto);
 
-    String loginResult = "";
-    String jsonResult = "";
+    UserDTO user = service.selectOneUser(userId);
+    UserDTO agent = service.selectOneAgent(userId);
 
-    if (dto == null) {
-      loginResult = "아이디나 비밀번호를 확인해주세요.";
-      jsonResult = "{\"loginResult\": \"" + loginResult + "\" }";
+    String loginResult = "아이디나 비밀번호를 확인해주세요.";
 
-    } else {
-      if (dto.getUserPw().equals(userPw)) {
-        session.setAttribute("loginUser", dto);
-        loginResult = "로그인 성공";
-        jsonResult = "{\"loginResult\": \"" + loginResult + "\" }";
-
-        if (rememberId) {
-          Cookie cookie = new Cookie("id", userId);
-          response.addCookie(cookie);
-        } else {
-          Cookie cookie = new Cookie("id", userId);
-          cookie.setMaxAge(0);
-
-          response.addCookie(cookie);
-        }
-      }
+    if (user != null && user.getUserPw().equals(userPw)) {
+      session.setAttribute("loginUser", user);
+      loginResult = "로그인 성공";
     }
-    return jsonResult;
+    if (agent != null && agent.getUserPw().equals(userPw)) {
+      session.setAttribute("loginUser", agent);
+      loginResult = "로그인 성공";
+    }
+
+    if (loginResult.equals("로그인 성공")) {
+
+      if (rememberId) {
+        Cookie cookie = new Cookie("id", userId);
+        response.addCookie(cookie);
+      } else {
+        Cookie cookie = new Cookie("id", userId);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+      }
+
+    }
+
+    return "{\"loginResult\": \"" + loginResult + "\" }";
   }
 
   @GetMapping("/signup")
@@ -93,13 +94,13 @@ public class UserController {
     if (userDTO.getRegistrationNum().isEmpty())
       userDTO.setRegistrationNum(null);
 
-    String result= "";
+    String result = "";
 
     // 공인중개사인 경우
     if (userDTO.getWhichParticipant().equals("agent")) {
       result = service.registerAgent(userDTO);
     } else {
-    // 일반 회원인 경우
+      // 일반 회원인 경우
       result = service.registerMember(userDTO);
     }
 

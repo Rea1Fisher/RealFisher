@@ -89,7 +89,7 @@
       </div>
 
       <div id="lessor-toggle" style="display: none">
-        건물 등록번호 <input type="text" id="lessor_number" name="registrationNum" maxlength="18">
+        건물 등록번호 <input type="text" id="lessor_number" name="buildingRegistration" maxlength="18">
       </div>
 
       <div style="margin:2px 0;">

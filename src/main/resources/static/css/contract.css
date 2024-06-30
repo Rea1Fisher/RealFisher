@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*MAIN*/
+main {
+  height: 100%;
+  width: 100%;
+  background: rgb(219, 187, 105, 0.7);
+}
+
+main .contract-cover {
+  margin: 0 auto;
+  width: 950px;
+  height: 2400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main .contract-cover .inner {
+  top: 3%;
+  width: 950px;
+  height: 2400px;
+  background-color: floralwhite;
+  position: absolute;
+}

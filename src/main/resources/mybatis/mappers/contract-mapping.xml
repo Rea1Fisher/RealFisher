@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.realfisher.domain.search.DAO.SearchDAO">
+  <!--insert-->
+  <insert id="registerContarct" parameterType="contractdto">
+    insert into contract(
+      address, land_type, building_structure, building_usage, leased_part,
+      land_area, building_area, leased_area, security_deposit, contract_deposit,
+      balance, lease_start_date, lease_end_date, special_terms,
+      landlord_address, landlord_phone_number, landlord_name,
+      tenant_address, tenant_phone_number, tenant_name,
+      office_address, office_name, office_regNum, office_number,
+      represent_name, contract_number, agent_registNum,
+      tenant_key, landlord_key, contract_time, agent_name, pre_contract
+    )
+    VALUES (
+             #{address}, #{landType}, #{buildingStructure}, #{buildingUsage}, #{leasedPart},
+             #{landArea}, #{buildingArea}, #{leasedArea}, #{securityDeposit}, #{contractDeposit},
+             #{balance}, #{leaseStartDate}, #{leaseEndDate}, #{specialTerms},
+             #{landlordAddress}, #{landlordPhoneNumber}, #{landlordName},
+             #{tenantAddress}, #{tenantPhoneNumber}, #{tenantName},
+             #{officeAddress}, #{officeName}, #{officeRegNum}, #{officeNumber},
+             #{representName}, #{contractNumber}, #{agentRegistNum},
+             #{tenantKey}, #{landlordKey}, now(), #{agentName}, #{preContract}
+           )
+  </insert>
+
+</mapper>

@@ -40,7 +40,7 @@ public class SearchController {
 //        log.info("RealEstateOfficeDTO : {}", list.get(i));
 //      }
     }
-    mv.setViewName("searchPage");
+    mv.setViewName("search/searchPage");
     return mv;
   }
   @GetMapping("/{registrationNum}")
@@ -51,7 +51,7 @@ public class SearchController {
     ReviewDTO reviewDTO = searchService.searchReview(registrationNum);
 
     mv.addObject("officeInfo",realEstateOfficeDTO);
-
+    mv.setViewName("office/officeSpec");
     return mv;
   }
 

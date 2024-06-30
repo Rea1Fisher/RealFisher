@@ -2,6 +2,7 @@ package com.example.realfisher.domain.user.service;
 
 import com.example.realfisher.domain.user.DAO.UserDAO;
 import com.example.realfisher.domain.user.DTO.UserDTO;
+import org.aspectj.weaver.loadtime.Agent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +13,9 @@ public class AgentService {
 
   public String registerAgent(UserDTO userDTO) {
     return userDAO.registerAgent(userDTO) == 1 ? "정상 회원가입이 되었습니다." : "오류 발생";
+  }
+
+  public UserDTO selectOneAgent(String userId) {
+    return userDAO.selectOneAgent(userId);
   }
 }

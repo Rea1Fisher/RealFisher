@@ -26,7 +26,7 @@
 <br>
 <c:forEach var="office" items="${officeInfo}">
   <div style="border: 1px solid olivedrab; text-align: center">
-    <a class="office-info" href="/">
+    <a class="office-info" href="/search/${office.registrationNum}">
       <div>${office.officeName}</div>
       <div>${office.registrationNum}</div>
       <div>${office.representative}</div>

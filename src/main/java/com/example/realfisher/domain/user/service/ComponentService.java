@@ -2,6 +2,7 @@ package com.example.realfisher.domain.user.service;
 
 import com.example.realfisher.domain.user.DTO.MailDTO;
 import com.example.realfisher.domain.user.DTO.UserDTO;
+import org.aspectj.weaver.loadtime.Agent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,9 @@ public class ComponentService {
 
   public String registerAgent(UserDTO userDTO) {
     return agentService.registerAgent(userDTO);
+  }
+
+  public UserDTO selectOneAgent(String userId) {
+    return agentService.selectOneAgent(userId);
   }
 }

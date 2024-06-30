@@ -1,11 +1,12 @@
 @charset "UTF-8";
 /*COMMON*/
-body {
+body{
   color: #333;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
   font-family: 'Nanum Gothic','sans-serif';
+  height: 100%;
 }
 img {
   display: block;
