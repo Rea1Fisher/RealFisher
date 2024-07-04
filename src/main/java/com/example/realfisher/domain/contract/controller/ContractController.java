@@ -28,6 +28,7 @@ public class ContractController {
     log.info("userDTO : {}", userDTO);
 
     ContractDTO contractDTO = new ContractDTO();
+
     contractDTO.setOfficeName(request.getParameter("office_name"));
     contractDTO.setRepresentName(request.getParameter("office_representName"));
     contractDTO.setOfficeAddress(request.getParameter("office_address"));
