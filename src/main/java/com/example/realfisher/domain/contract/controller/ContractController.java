@@ -34,7 +34,7 @@ public class ContractController {
     contractDTO.setOfficeAddress(request.getParameter("office_address"));
 
     if (userDTO.getBrokerNumber() != null) {
-      contractDTO.setAgentRegistNum(userDTO.getBrokerNumber());
+      contractDTO.setAgentRegistNum(Long.valueOf(userDTO.getBrokerNumber()));
       contractDTO.setOfficeRegistNum(userDTO.getRegistrationNum());
       contractDTO.setAgentName(userDTO.getUserName());
     } else if (userDTO.getBuildingRegistration() != null) {
@@ -57,10 +57,11 @@ public class ContractController {
   @PostMapping("/startContract")
   public ModelAndView startContract(ContractDTO contractDTO) {
     ModelAndView mv = new ModelAndView();
-    int hashCode=Math.abs(contractDTO.hashCode());
+    long hashCode=Math.abs(contractDTO.hashCode());
     contractDTO.setContractNumber(hashCode);
 //    contractService.searchPreContract()
     contractService.registerContarct(contractDTO);
+    mv.setViewName("redirect:/");
     return mv;
   }
 }

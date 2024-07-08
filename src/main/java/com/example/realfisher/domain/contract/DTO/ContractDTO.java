@@ -21,24 +21,24 @@ public class ContractDTO {
   private String buildingStructure;
   private String buildingUsage;
   private String leasedPart;
-  private int landArea;
-  private int buildingArea ;
-  private int leasedArea ;
-  private Timestamp leaseStartDate;
-  private Timestamp leaseEndDate;
+  private Integer landArea;
+  private Integer buildingArea ;
+  private Integer leasedArea ;
+  private String leaseStartDate;
+  private String leaseEndDate;
   private String specialTerms;
 
-  private long securityDeposit;
-  private long contractDeposit;
-  private long balance;
+  private Long securityDeposit;
+  private Long contractDeposit;
+  private Long balance;
 
   private String landlordAddress;
-  private long landlordKey;
+  private Long landlordKey;
   private String landlordPhoneNumber;
   private String landlordName;
 
   private String tenantAddress;
-  private long tenantKey;
+  private Long tenantKey;
   private String tenantPhoneNumber;
   private String tenantName;
 
@@ -48,10 +48,10 @@ public class ContractDTO {
   private String officeNumber; //전화번호
   private String representName; // 대표자
   private String agentName; // 소속공인중개사
-  private String agentRegistNum; // 공인중개사 등록번호
+  private Long agentRegistNum; // 공인중개사 등록번호
 
-  private long contractNumber; // 기본키
-  private long preContract; // 이전 계약서
+  private Long contractNumber; // 기본키
+  private Long preContract; // 이전 계약서
 
 
 }

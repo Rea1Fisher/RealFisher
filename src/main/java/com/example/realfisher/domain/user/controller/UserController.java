@@ -41,8 +41,6 @@ public class UserController {
           String userId, String userPw, boolean rememberId
           , HttpServletResponse response, HttpSession session
   ) {
-    log.info("id : {}", userId);
-    log.info("pw : {}", userPw);
 
     UserDTO user = service.selectOneUser(userId);
     UserDTO agent = service.selectOneAgent(userId);
